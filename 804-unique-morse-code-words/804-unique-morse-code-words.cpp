@@ -34,7 +34,6 @@ public:
             for(int j=0;j<words[i].size();j++){
                 temp+=m[words[i][j]];
             }
-            cout<<temp<<endl;
             s.insert(temp);
         }
         return s.size();
