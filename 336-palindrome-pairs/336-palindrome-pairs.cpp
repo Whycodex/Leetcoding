@@ -1,4 +1,5 @@
 class Solution {
+public:
     bool ispalin(string &str,int i,int j){
         while(i<j){
             if(str[i]!=str[j])
@@ -8,13 +9,13 @@ class Solution {
         }
         return true;
     }
-public:
     vector<vector<int>> palindromePairs(vector<string>& words) {
         vector<vector<int>>res;
         unordered_map<string,int>m;
         int idx=-1;
         vector<int>v;
-        for(int i=0;i<words.size();i++){
+        int n=words.size();
+        for(int i=0;i<n;i++){
             if(words[i]==""){
                 idx=i;
                 continue;
@@ -26,7 +27,6 @@ public:
             reverse(str.begin(),str.end());
             m[str]=i;
         }
-        int n=words.size();
         for(int i=0;i<n;i++){
             for(int j=0;j<words[i].size();j++){
                 if(ispalin(words[i],j,words[i].size()-1)==true){
