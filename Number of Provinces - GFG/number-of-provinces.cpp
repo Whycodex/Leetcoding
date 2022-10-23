@@ -30,7 +30,6 @@ class Solution {
                 }
             }
         }
-        
         for(int i=0;i<V;i++){
             if(vis[i]==0){
                 count++;
