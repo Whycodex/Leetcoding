@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
     private:
-    void dfs(int node,vector<int>adj[],int vis[],stack<int>&st){
+    void dfs(int node,vector<int>adj[],vector<int>&vis,stack<int>&st){
         vis[node]=1;
         for(auto i:adj[node]){
             if(!vis[i]){
@@ -20,14 +20,14 @@ class Solution
 	vector<int> topoSort(int V, vector<int> adj[]) 
 	{
 	    // code here
-	    int vis[V]={0};
+	    vector<int>vis(V,0);
+	    vector<int>res;
 	    stack<int>st;
 	    for(int i=0;i<V;i++){
 	        if(!vis[i]){
 	            dfs(i,adj,vis,st);
 	        }
 	    }
-	    vector<int>res;
 	    while(st.empty()==false){
 	        res.push_back(st.top());
 	        st.pop();
