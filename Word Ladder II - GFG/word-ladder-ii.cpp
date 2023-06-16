@@ -25,6 +25,7 @@ public:
                 for(auto i:usedOnLevel){
                     st.erase(i);
                 }
+                usedOnLevel.clear();
             }
             string word=vec.back();
             if(word==endWord){
